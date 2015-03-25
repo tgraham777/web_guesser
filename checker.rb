@@ -1,21 +1,21 @@
 class Checker
-  def self.check_guess(number, guess)
-    if guess - number > 5
+  def self.check_guess(secret_number, guess)
+    if guess - secret_number > 5
       "way too high!"
-    elsif guess - number < -5
+    elsif guess - secret_number < -5
       "way too low!"
-    elsif guess > number
+    elsif guess > secret_number
       "too high!"
-    elsif guess < number
+    elsif guess < secret_number
       "too low!"
     else
       "correct!"
     end
   end
 
-  def self.check_win(number, guess)
-    if number == guess
-      "You got it right! The SECRET NUMBER was #{number}"
+  def self.check_win(secret_number, guess)
+    if secret_number == guess
+      "You got it right! The SECRET NUMBER was #{secret_number}"
     end
   end
 end
