@@ -1,5 +1,21 @@
 <html>
-  <head></head>
+  <head>
+    <% if guess != 0 && guess.to_i == secret_number %>
+      <style>
+        body {background: green;}
+      </style>
+    <% end %>
+    <% if guess != 0 && (guess.to_i - secret_number).abs > 5 %>
+      <style>
+        body {background: red;}
+      </style>
+    <% end %>
+    <% if guess != 0 && (guess.to_i - secret_number).abs < 5 && (guess.to_i != secret_number) %>
+      <style>
+        body {background: mistyrose;}
+      </style>
+    <% end %>
+  </head>
   <body>
     <form>
       <input type='text' name='guess' />
